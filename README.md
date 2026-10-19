@@ -28,18 +28,18 @@
 
 <br>
 
-<details>
-<summary><b>📖 Table of Contents</b></summary>
-<br>
+<div align="center">
 
-| | |
-|---|---|
-| 📸 [Preview](#-preview) | 🚀 [Getting Started](#-getting-started) |
-| ✨ [Features](#-features) | 📂 [Project Structure](#-project-structure) |
-| 🛠️ [Tech Stack](#%EF%B8%8F-tech-stack) | 🧩 [Architecture](#-architecture) |
-| 🤝 [Contributing](#-contributing) | 📄 [License](#-license) |
+[**📸 Preview**](#-preview) &nbsp;•&nbsp;
+[**✨ Features**](#-features) &nbsp;•&nbsp;
+[**🛠️ Tech Stack**](#%EF%B8%8F-tech-stack) &nbsp;•&nbsp;
+[**🚀 Getting Started**](#-getting-started) &nbsp;•&nbsp;
+[**📂 Structure**](#-project-structure) &nbsp;•&nbsp;
+[**🧩 Architecture**](#-architecture) &nbsp;•&nbsp;
+[**🤝 Contributing**](#-contributing) &nbsp;•&nbsp;
+[**📄 License**](#-license)
 
-</details>
+</div>
 
 ## 📸 Preview
 
