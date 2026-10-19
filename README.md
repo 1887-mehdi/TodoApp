@@ -1,6 +1,6 @@
 <div align="center">
 
-#  TodoApp
+  TodoApp
 
 **A simple and clean task manager to organize your daily life**
 
@@ -24,23 +24,34 @@
 ## ✨ Features
 
 - ➕ Add new tasks quickly
-- ✏️ Edit existing tasks
-- 🗑️ Delete tasks you no longer need
+- ✏️ Edit tasks with title, description, priority, and due date
+- 🗑️ Delete tasks or clear them all at once
 - ✔️ Mark tasks as completed
+- 🔍 Search through your tasks
+- 🎯 Set task priority (low, medium, high)
+- 📅 Due date picker
+- 📊 Daily progress bar
+- 🌗 Light and dark theme
+- 🖱️ Drag and drop to reorder tasks
+- 🌐 RTL support with Persian (Farsi) interface
 - 📱 Responsive design for all screen sizes
+- 💾 Tasks are saved automatically in your browser (localStorage)
 
 ## 🛠️ Built With
 
 - **HTML5** – structure
 - **CSS3** – styling and layout
 - **JavaScript (Vanilla)** – logic and interactivity
+- **Bootstrap 5 (RTL)** – layout and modal
+- **Bootstrap Icons** – icons
+- **Vazirmatn** – Persian font
 
 ## 🚀 Getting Started
 
 No installation needed. Just clone the repo and open it in your browser:
 
 ````bash
-git clone https://github.com/YOUR-USERNAME/TodoApp.git
+git clone https://github.com/1887-mehdi/TodoApp.git
 cd TodoApp
 ````
 
@@ -51,8 +62,22 @@ Then open `index.html` in your browser.
 ````
 TodoApp/
 ├── index.html
-├── style.css
-├── script.js
+├── css/
+│   ├── main.css
+│   ├── base/
+│   ├── layout/
+│   └── components/
+├── js/
+│   ├── main.js
+│   ├── core/
+│   ├── components/
+│   └── utils/
+├── fonts/
+│   └── vazirmatn/
+├── vendor/
+│   ├── bootstrap/
+│   └── bootstrap-icons/
+├── Screenshot.png
 └── README.md
 ````
 
