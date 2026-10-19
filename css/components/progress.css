@@ -1,0 +1,32 @@
+.progress__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+    font-size: var(--fs-sm);
+}
+
+.progress__label {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.progress__percent {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.progress__track {
+    height: 8px;
+    border-radius: 99px;
+    background: var(--primary-soft);
+    overflow: hidden;
+}
+
+.progress__bar {
+    width: 0;
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transition: width .5s cubic-bezier(.4, 0, .2, 1);
+}

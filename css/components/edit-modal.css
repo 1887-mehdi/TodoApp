@@ -1,0 +1,246 @@
+/* ---------- پوسته ---------- */
+.edit-modal {
+    --bs-modal-bg: var(--surface);
+    --bs-modal-color: var(--text);
+    --bs-modal-border-color: var(--border);
+    --bs-modal-border-radius: var(--radius-lg);
+    --bs-modal-inner-border-radius: calc(var(--radius-lg) - 1px);
+    --bs-modal-box-shadow: var(--shadow-lg);
+    --bs-modal-header-border-color: var(--border);
+    --bs-modal-footer-border-color: var(--border);
+    --bs-modal-width: 500px;
+
+    font-family: var(--font);
+}
+
+.edit-modal .modal-content {
+    overflow: hidden;
+}
+
+/* بک‌دراپ تیره و بلور */
+.modal-backdrop {
+    --bs-backdrop-bg: #0f1020;
+    --bs-backdrop-opacity: .55;
+}
+
+.modal-backdrop.show {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* انیمیشن نرم ورود */
+.edit-modal.fade .modal-dialog {
+    transform: translateY(16px) scale(.97);
+    transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+}
+
+.edit-modal.show .modal-dialog {
+    transform: none;
+}
+
+/* ---------- هدر ---------- */
+.edit-modal .modal-header {
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background: linear-gradient(180deg, var(--primary-soft), transparent);
+}
+
+.edit-modal .modal-title {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.edit-modal__sub {
+    font-size: var(--fs-sm);
+    color: var(--muted);
+}
+
+.edit-modal__icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    box-shadow: 0 6px 16px rgba(99, 102, 241, .35);
+}
+
+/* دکمه‌ی بستن: در تم تیره هم دیده بشه */
+.edit-modal .btn-close {
+    flex-shrink: 0;
+    margin: 0;
+    margin-inline-start: auto;
+    padding: .6rem;
+    border-radius: var(--radius-sm);
+    opacity: .6;
+    transition: opacity .2s, background-color .2s;
+}
+
+.edit-modal .btn-close:hover {
+    opacity: 1;
+    background-color: var(--primary-soft);
+}
+
+body.dark .edit-modal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+body.dark .edit-modal input[type="date"] {
+    color-scheme: dark;
+}
+
+/* ---------- بدنه ---------- */
+.edit-modal .modal-body {
+    padding: var(--space-5);
+}
+
+.edit-modal .form-label {
+    margin-bottom: var(--space-2);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--text);
+}
+
+.edit-modal .form-control,
+.edit-modal .form-select {
+    min-height: var(--control-h);
+    padding-inline: var(--space-4);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--surface-2);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: var(--fs-md);
+    transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+
+.edit-modal .form-control::placeholder {
+    color: var(--muted);
+}
+
+.edit-modal .form-control:hover:not(:focus),
+.edit-modal .form-select:hover:not(:focus) {
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+}
+
+.edit-modal .form-control:focus,
+.edit-modal .form-select:focus {
+    background-color: var(--surface);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+    color: var(--text);
+}
+
+.edit-modal textarea.form-control {
+    min-height: 110px;
+    padding-block: var(--space-3);
+    line-height: 1.8;
+    resize: vertical;
+}
+
+/* فلش select (فاصله از لبه‌ی چپ، مثل فرم افزودن) */
+.edit-modal .form-select {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236f769c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-position: left 14px center;
+    background-size: 16px;
+    padding-left: 40px;
+    cursor: pointer;
+}
+
+.edit-modal .form-select option {
+    color: var(--text);
+    background-color: var(--surface);
+}
+
+/* خطا و شمارنده */
+.edit-modal .form-control.is-invalid {
+    border-color: var(--danger);
+    background-image: none;
+}
+
+.edit-modal .invalid-feedback {
+    margin-top: var(--space-2);
+    font-size: var(--fs-sm);
+}
+
+.edit-modal .form-text {
+    margin-top: var(--space-2);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ---------- فوتر ---------- */
+.edit-modal .modal-footer {
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-5);
+    background: var(--surface-2);
+}
+
+.edit-modal .modal-footer > * {
+    margin: 0;
+}
+
+.edit-modal .modal-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    height: var(--control-h);
+    padding: 0 20px;
+    border-radius: var(--radius-md);
+    font-family: var(--font);
+    font-size: var(--fs-md);
+    font-weight: 600;
+}
+
+.edit-modal .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, .35);
+}
+
+.edit-modal .btn-primary:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, .45);
+}
+
+.edit-modal .btn-outline-secondary {
+    --bs-btn-color: var(--text);
+    --bs-btn-border-color: var(--border);
+    --bs-btn-hover-color: var(--primary);
+    --bs-btn-hover-bg: var(--primary-soft);
+    --bs-btn-hover-border-color: var(--primary);
+    --bs-btn-active-color: var(--primary);
+    --bs-btn-active-bg: var(--primary-soft);
+    --bs-btn-active-border-color: var(--primary);
+}
+
+/* ---------- موبایل ---------- */
+@media (max-width: 560px) {
+    .edit-modal .modal-header,
+    .edit-modal .modal-body,
+    .edit-modal .modal-footer {
+        padding-inline: var(--space-4);
+    }
+
+    .edit-modal .modal-footer .btn {
+        flex: 1;
+    }
+    .date-field { flex: 1 1 100%; width: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .edit-modal.fade .modal-dialog {
+        transition: none;
+    }
+}

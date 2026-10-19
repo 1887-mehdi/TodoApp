@@ -1,0 +1,40 @@
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--bg) 35%, transparent);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    transition: opacity .5s ease, visibility .5s ease;
+}
+
+.page-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* From Uiverse.io by JesusRafaelNavaCruz */
+.loader {
+    --loader-color: var(--primary);
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border-top: 8px solid var(--loader-color);
+    border-left: 8px solid var(--loader-color);
+    border-right: 8px solid transparent;
+    animation: loader .7s infinite linear;
+    filter: drop-shadow(0 4px 14px rgba(99, 102, 241, .45));
+}
+
+body.dark .loader {
+    --loader-color: #fff;
+}
+
+@keyframes loader {
+    to { transform: rotate(360deg); }
+}

@@ -1,0 +1,142 @@
+.jdp {
+    position: fixed;
+    z-index: 2000;
+    width: 300px;
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow-lg);
+    font-family: var(--font);
+    animation: jdp-in .18s cubic-bezier(.2, .8, .2, 1);
+}
+
+.jdp[hidden] { display: none; }
+
+@keyframes jdp-in {
+    from { opacity: 0; transform: translateY(-6px); }
+}
+
+.jdp__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.jdp__title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+}
+
+.jdp__nav {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    color: var(--muted);
+    transition: background .2s, color .2s;
+}
+
+.jdp__nav:hover {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.jdp__nav .icon { display: block; }
+
+.jdp__week,
+.jdp__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.jdp__week {
+    margin-bottom: var(--space-1);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.jdp__cell {
+    display: grid;
+    place-items: center;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text);
+    transition: background .15s, color .15s;
+}
+
+button.jdp__cell:hover { background: var(--primary-soft); color: var(--primary); }
+
+.jdp__cell.is-today {
+    box-shadow: inset 0 0 0 1.5px var(--primary);
+    color: var(--primary);
+}
+
+.jdp__cell.is-selected,
+.jdp__cell.is-selected:hover {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, .4);
+}
+
+.jdp__foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border);
+}
+
+.jdp__link {
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.jdp__link:hover { background: var(--primary-soft); }
+.jdp__link--muted { color: var(--muted); }
+
+/* دکمه‌ی تاریخ در مودال ویرایش */
+.edit-date-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    min-height: var(--control-h);
+    padding: 0 var(--space-4);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: var(--fs-md);
+    text-align: start;
+    transition: border-color .2s, color .2s;
+}
+
+.edit-date-btn:hover { border-color: var(--primary); }
+.edit-date-btn.has-value { color: var(--text); }
+
+.edit-date-btn__icon { display: flex; color: var(--primary); }
+.edit-date-btn__text { flex: 1; }
+
+.edit-date-btn__clear {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: .7rem;
+}
+
+.edit-date-btn__clear[hidden] { display: none; }
+.edit-date-btn__clear:hover { background: var(--primary-soft); color: var(--primary); }

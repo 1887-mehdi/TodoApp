@@ -1,0 +1,332 @@
+/* ---------- کنترل مشترک (input / select / textarea) ---------- */
+.control {
+    width: 100%;
+    height: var(--control-h);
+    padding: 0 var(--space-4);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--surface);   /* ← قبلاً background بود */
+    font-size: var(--fs-md);
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.control::placeholder {
+    color: var(--muted);
+}
+
+.control:hover:not(:focus) {
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+}
+
+.control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--surface);   /* ← قبلاً background بود */
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.control.is-invalid {
+    border-color: var(--danger);
+}
+
+/* ---------- select با فلش سفارشی ---------- */
+select.control {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-weight: 500;
+
+    /* فلش: ۱۴ پیکسل از لبه (در RTL سمت چپ) فاصله دارد */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236f769c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 14px center;
+    background-size: 16px;
+
+    /* جا برای فلش، تا متن روی آن نیفتد */
+    padding-left: 40px;
+}
+
+select.control:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+select.control option {
+    color: var(--text);
+    background-color: var(--surface);   /* ← برای یکدستی */
+}
+
+textarea.control {
+    height: auto;
+    min-height: 100px;
+    padding: var(--space-3) var(--space-4);
+    line-height: 1.8;
+    resize: vertical;
+}
+
+/* ---------- فرم افزودن ---------- */
+.add-form {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius-md) + var(--space-2));
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.add-form__btn {
+    display: grid;
+    place-items: center;
+    width: var(--control-h);
+    padding: 0;
+    gap: 0;
+    flex-shrink: 0;
+}
+
+.add-form__btn > span {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.add-form__btn .icon {
+    display: block;
+    margin: 0;
+}
+
+.add-form:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+/* داخل کارت فرم، خود فیلدها بدون حاشیه‌ی اضافه */
+.add-form .control {
+    background-color: var(--surface);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.add-form .control:hover:not(:focus) {
+    border-color: var(--border);
+}
+
+.add-form .control:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.add-form__input {
+    flex: 1;
+    min-width: 0;
+}
+
+.add-form__select {
+    width: 160px;
+    flex-shrink: 0;
+}
+
+/* ---------- فیلد تاریخ ---------- */
+/* ---------- فیلد تاریخ (دکمه‌ی آیکونی) ---------- */
+.date-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.date-field__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-width: var(--control-h);
+    height: var(--control-h);
+    padding: 0;
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color .2s, border-color .2s, background .2s;
+}
+
+.date-field__btn:hover {
+    color: var(--primary);
+    border-color: var(--border);
+}
+
+.date-field__btn .icon { display: block; }
+
+/* وقتی تاریخ انتخاب شده: متن هم دیده می‌شه */
+.date-field.has-value .date-field__btn {
+    padding-inline: 14px 34px;
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+.date-field__text:empty { display: none; }
+
+.date-field__clear {
+    position: absolute;
+    inset-inline-end: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: var(--primary);
+    transition: background .2s;
+}
+
+.date-field__clear[hidden] { display: none; }
+.date-field__clear:hover { background: var(--primary-soft); }
+
+/* input واقعی نامرئی است ولی تقویم از زیر دکمه باز می‌شود */
+.date-field__input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    color-scheme: light;
+}
+
+body.dark .date-field__input { color-scheme: dark; }
+
+/* ---------- جستجو ---------- */
+/* ---------- حالت افزودن / جستجو ---------- */
+.add-form__mode {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex: 0 0 var(--control-h);
+    width: var(--control-h);
+    height: var(--control-h);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--muted);
+    transition: color .2s, background .2s;
+}
+
+.add-form__mode:hover { color: var(--primary); }
+
+.mode-icon {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    transition: opacity .25s, transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+
+.mode-icon .icon { display: block; }
+
+.mode-icon--close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(.5);
+}
+
+/* گروه اولویت / تاریخ / + */
+.add-form__extras {
+    display: flex;
+    gap: var(--space-2);
+    max-width: 600px;
+    overflow: hidden;
+    transition: max-width .4s cubic-bezier(.2, .8, .2, 1),
+                opacity .25s, transform .35s;
+}
+
+/* ---- حالت جستجو ---- */
+.add-form.is-search {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.add-form.is-search .add-form__mode {
+    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.add-form.is-search .mode-icon--search {
+    opacity: 0;
+    transform: rotate(90deg) scale(.5);
+}
+
+.add-form.is-search .mode-icon--close {
+    opacity: 1;
+    transform: none;
+}
+
+.add-form.is-search .add-form__extras {
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-16px);
+    pointer-events: none;
+    gap: 0;
+}
+
+/* ورودی با هاله‌ی کوتاه می‌گه «اینجا تایپ کن» */
+.add-form.is-search .add-form__input {
+    animation: search-pulse .6s ease-out;
+}
+
+@keyframes search-pulse {
+    0%   { box-shadow: 0 0 0 0 var(--primary-soft); }
+    100% { box-shadow: 0 0 0 10px transparent; }
+}
+
+/* ---------- فیلد داخل مودال ---------- */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.field__label {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+}
+
+.field__error {
+    font-size: var(--fs-sm);
+    color: var(--danger);
+}
+
+.field__error:empty {
+    display: none;
+}
+
+@media (max-width: 560px) {
+    .add-form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .add-form__input {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .add-form__extras {
+        flex: 1 1 100%;
+        max-width: none;
+        justify-content: flex-start;   /* در RTL: سمت راست */
+        flex-wrap: wrap;
+    }
+
+    .add-form__select { flex: 1 1 100%; width: auto; }
+    .date-field       { flex: 0 0 auto; }
+    .add-form__btn    { flex: 0 0 var(--control-h); }
+
+    .add-form.is-search .add-form__extras {
+        flex-basis: 0;
+        height: 0;
+        margin: 0;
+    }
+}

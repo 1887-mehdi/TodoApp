@@ -1,0 +1,74 @@
+:root {
+    --font: 'Vazirmatn', Tahoma, sans-serif;
+
+    /* رنگ‌ها */
+    --bg: #eef0ff;
+    --card: rgba(255, 255, 255, .85);
+    --surface: #ffffff;
+    --surface-2: #f6f7ff;
+    --border: #e3e6f6;
+    --text: #1e2347;
+    --muted: #6f769c;
+
+    --primary: #6366f1;
+    --primary-2: #8b5cf6;
+    --primary-soft: rgba(99, 102, 241, .12);
+
+    --low: #16a34a;
+    --medium: #d97706;
+    --high: #dc2626;
+
+    --success: #22c55e;
+    --danger: #ef4444;
+    --danger-soft: rgba(239, 68, 68, .12);
+
+    /* سایزهای یکدست */
+    --control-h: 46px;     /* input / select / button اصلی */
+    --btn-sm-h: 38px;      /* دکمه‌های کوچک */
+    --icon-btn: 38px;      /* دکمه‌های آیکونی */
+    --badge-h: 32px;       /* بج اولویت */
+
+    --fs-sm: 13px;
+    --fs-md: 15px;
+    --fs-lg: 18px;
+    --fs-xl: 24px;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+
+    --shadow-sm: 0 2px 8px rgba(30, 35, 71, .06);
+    --shadow-md: 0 8px 20px rgba(99, 102, 241, .15);
+    --shadow-lg: 0 20px 50px rgba(79, 70, 229, .18);
+}
+
+body.dark {
+    --bg: #0f1020;
+    --card: rgba(30, 32, 58, .85);
+    --surface: #262a4a;
+    --surface-2: #1f2240;
+    --border: #353a64;
+    --text: #eef0ff;
+    --muted: #9aa0c7;
+
+    --primary: #818cf8;
+    --primary-soft: rgba(129, 140, 248, .18);
+
+    --low: #4ade80;
+    --medium: #fbbf24;
+    --high: #f87171;
+
+    --danger-soft: rgba(239, 68, 68, .18);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .3);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, .4);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, .55);
+}
