@@ -65,7 +65,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 👤 Author
 
 **Your Name**
-GitHub: [@YOUR-USERNAME](https://github.com/1887-mehdi)
+GitHub: [@1887-mehdi](https://github.com/1887-mehdi)
 
 ---
 
