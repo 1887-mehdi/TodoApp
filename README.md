@@ -17,7 +17,7 @@
 
 ## 📸 Preview
 
-![TodoApp Screenshot](screenshot.png)
+![TodoApp Screenshot](Screenshot.png)
 
 ## ✨ Features
 
