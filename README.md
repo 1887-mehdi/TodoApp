@@ -76,14 +76,16 @@
 
 <div align="center">
 
-| Technology | Purpose |
-|---|---|
-| **HTML5** | Semantic page structure |
-| **CSS3** | Design tokens, layout, and components |
-| **JavaScript (ES Modules)** | Vanilla JS, no frameworks |
-| **Bootstrap 5 (RTL)** | Layout and edit modal |
-| **Bootstrap Icons** | Icons |
-| **Vazirmatn** | Persian font (self-hosted) |
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+<img src="https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+<img src="https://img.shields.io/badge/Bootstrap_5_RTL-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+<img src="https://img.shields.io/badge/Bootstrap_Icons-0D6EFD?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Icons">
+<img src="https://img.shields.io/badge/Vazirmatn_Font-6C5CE7?style=for-the-badge&logo=googlefonts&logoColor=white" alt="Vazirmatn">
+
+<br><br>
+
+<i>Vanilla JavaScript with ES Modules · No frameworks · No build step</i>
 
 </div>
 
