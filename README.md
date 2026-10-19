@@ -54,22 +54,68 @@
 
 ## ✨ Features
 
-| | Feature | Description |
-|---|---|---|
-| ➕ | **Quick add** | Add a task in seconds with priority and due date |
-| ✏️ | **Full editing** | Edit title, description, priority, and due date in a modal |
-| ✔️ | **Mark as done** | Complete tasks and track what's left |
-| 🔍 | **Search** | Instantly search through all your tasks |
-| 🎯 | **Priorities** | Low, medium, and high priority levels |
-| 📅 | **Due dates** | Built-in date picker for deadlines |
-| 📊 | **Progress bar** | See your daily progress at a glance |
-| 🗂️ | **Filters** | View all, active, or completed tasks |
-| 🖱️ | **Drag & drop** | Reorder tasks by dragging |
-| 🌗 | **Light / Dark theme** | Switch themes with a single click |
-| 💾 | **Auto-save** | Tasks are stored in your browser (localStorage) |
-| 🌐 | **RTL support** | Persian (Farsi) interface with Vazirmatn font |
-| 📱 | **Responsive** | Works on desktop, tablet, and mobile |
-
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>➕ Quick Add</h3>
+      <p>Add a task in seconds with priority and due date.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>✏️ Full Editing</h3>
+      <p>Edit title, description, priority, and due date in a clean modal.</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <h3>🔍 Smart Search</h3>
+      <p>Instantly search through all your tasks.</p>
+    </td>
+    <td valign="top">
+      <h3>🎯 Priorities</h3>
+      <p>Organize with low, medium, and high priority levels.</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <h3>📅 Due Dates</h3>
+      <p>Built-in date picker so you never miss a deadline.</p>
+    </td>
+    <td valign="top">
+      <h3>📊 Progress Tracking</h3>
+      <p>See your daily progress at a glance with a live progress bar.</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <h3>🗂️ Filters</h3>
+      <p>Switch between all, active, and completed tasks.</p>
+    </td>
+    <td valign="top">
+      <h3>🖱️ Drag & Drop</h3>
+      <p>Reorder your tasks by simply dragging them.</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <h3>🌗 Light / Dark Theme</h3>
+      <p>Switch themes with a single click.</p>
+    </td>
+    <td valign="top">
+      <h3>💾 Auto-Save</h3>
+      <p>Your tasks are stored in your browser (localStorage).</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <h3>🌐 RTL Support</h3>
+      <p>Persian (Farsi) interface with the Vazirmatn font.</p>
+    </td>
+    <td valign="top">
+      <h3>📱 Responsive</h3>
+      <p>Works smoothly on desktop, tablet, and mobile.</p>
+    </td>
+  </tr>
+</table>
 ---
 
 ## 🛠️ Tech Stack
