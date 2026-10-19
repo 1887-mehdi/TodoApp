@@ -30,14 +30,13 @@
 
 <div align="center">
 
-[**📸 Preview**](#-preview) &nbsp;•&nbsp;
-[**✨ Features**](#-features) &nbsp;•&nbsp;
-[**🛠️ Tech Stack**](#%EF%B8%8F-tech-stack) &nbsp;•&nbsp;
-[**🚀 Getting Started**](#-getting-started) &nbsp;•&nbsp;
-[**📂 Structure**](#-project-structure) &nbsp;•&nbsp;
-[**🧩 Architecture**](#-architecture) &nbsp;•&nbsp;
-[**🤝 Contributing**](#-contributing) &nbsp;•&nbsp;
-[**📄 License**](#-license)
+<a href="#-preview"><img src="https://img.shields.io/badge/📸_Preview-6C5CE7?style=flat-square" alt="Preview"></a>
+<a href="#-features"><img src="https://img.shields.io/badge/✨_Features-6C5CE7?style=flat-square" alt="Features"></a>
+<a href="#-tech-stack"><img src="https://img.shields.io/badge/🛠_Tech_Stack-6C5CE7?style=flat-square" alt="Tech Stack"></a>
+<a href="#-getting-started"><img src="https://img.shields.io/badge/🚀_Getting_Started-6C5CE7?style=flat-square" alt="Getting Started"></a>
+<a href="#-project-structure"><img src="https://img.shields.io/badge/📂_Structure-6C5CE7?style=flat-square" alt="Structure"></a>
+<a href="#-architecture"><img src="https://img.shields.io/badge/🧩_Architecture-6C5CE7?style=flat-square" alt="Architecture"></a>
+<a href="#-license"><img src="https://img.shields.io/badge/📄_License-6C5CE7?style=flat-square" alt="License"></a>
 
 </div>
 
