@@ -9,7 +9,9 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-[Live Demo]( https://1887-mehdi.github.io/TodoApp/) · [Report Bug](../../issues) · [Request Feature](../../issues)
+<a href="https://1887-mehdi.github.io/TodoApp/"><img src="https://img.shields.io/badge/🚀_Live_Demo-6C5CE7?style=for-the-badge" alt="Live Demo"></a>
+<a href="https://github.com/1887-mehdi/TodoApp/issues"><img src="https://img.shields.io/badge/🐞_Report_Bug-E74C3C?style=for-the-badge" alt="Report Bug"></a>
+<a href="https://github.com/1887-mehdi/TodoApp/issues"><img src="https://img.shields.io/badge/💡_Request_Feature-27AE60?style=for-the-badge" alt="Request Feature"></a>
 
 </div>
 
