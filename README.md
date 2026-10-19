@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✅ TodoApp
+#  TodoApp
 
 **A simple and clean task manager to organize your daily life**
 
