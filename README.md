@@ -54,84 +54,36 @@
 
 ## ✨ Features
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>➕ Quick Add</h3>
-      <p>Add a task in seconds with priority and due date.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>✏️ Full Editing</h3>
-      <p>Edit title, description, priority, and due date in a clean modal.</p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <h3>🔍 Smart Search</h3>
-      <p>Instantly search through all your tasks.</p>
-    </td>
-    <td valign="top">
-      <h3>🎯 Priorities</h3>
-      <p>Organize with low, medium, and high priority levels.</p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <h3>📅 Due Dates</h3>
-      <p>Built-in date picker so you never miss a deadline.</p>
-    </td>
-    <td valign="top">
-      <h3>📊 Progress Tracking</h3>
-      <p>See your daily progress at a glance with a live progress bar.</p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <h3>🗂️ Filters</h3>
-      <p>Switch between all, active, and completed tasks.</p>
-    </td>
-    <td valign="top">
-      <h3>🖱️ Drag & Drop</h3>
-      <p>Reorder your tasks by simply dragging them.</p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <h3>🌗 Light / Dark Theme</h3>
-      <p>Switch themes with a single click.</p>
-    </td>
-    <td valign="top">
-      <h3>💾 Auto-Save</h3>
-      <p>Your tasks are stored in your browser (localStorage).</p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <h3>🌐 RTL Support</h3>
-      <p>Persian (Farsi) interface with the Vazirmatn font.</p>
-    </td>
-    <td valign="top">
-      <h3>📱 Responsive</h3>
-      <p>Works smoothly on desktop, tablet, and mobile.</p>
-    </td>
-  </tr>
-</table>
+| | Feature | Description |
+|---|---|---|
+| ➕ | **Quick add** | Add a task in seconds with priority and due date |
+| ✏️ | **Full editing** | Edit title, description, priority, and due date in a modal |
+| ✔️ | **Mark as done** | Complete tasks and track what's left |
+| 🔍 | **Search** | Instantly search through all your tasks |
+| 🎯 | **Priorities** | Low, medium, and high priority levels |
+| 📅 | **Due dates** | Built-in date picker for deadlines |
+| 📊 | **Progress bar** | See your daily progress at a glance |
+| 🗂️ | **Filters** | View all, active, or completed tasks |
+| 🖱️ | **Drag & drop** | Reorder tasks by dragging |
+| 🌗 | **Light / Dark theme** | Switch themes with a single click |
+| 💾 | **Auto-save** | Tasks are stored in your browser (localStorage) |
+| 🌐 | **RTL support** | Persian (Farsi) interface with Vazirmatn font |
+| 📱 | **Responsive** | Works on desktop, tablet, and mobile |
+
 ---
 
 ## 🛠️ Tech Stack
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-<img src="https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-<img src="https://img.shields.io/badge/Bootstrap_5_RTL-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-<img src="https://img.shields.io/badge/Bootstrap_Icons-0D6EFD?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Icons">
-<img src="https://img.shields.io/badge/Vazirmatn_Font-6C5CE7?style=for-the-badge&logo=googlefonts&logoColor=white" alt="Vazirmatn">
-
-<br><br>
-
-<i>Vanilla JavaScript with ES Modules · No frameworks · No build step</i>
+| Technology | Purpose |
+|---|---|
+| **HTML5** | Semantic page structure |
+| **CSS3** | Design tokens, layout, and components |
+| **JavaScript (ES Modules)** | Vanilla JS, no frameworks |
+| **Bootstrap 5 (RTL)** | Layout and edit modal |
+| **Bootstrap Icons** | Icons |
+| **Vazirmatn** | Persian font (self-hosted) |
 
 </div>
 
