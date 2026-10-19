@@ -316,17 +316,20 @@ body.dark .date-field__input { color-scheme: dark; }
     .add-form__extras {
         flex: 1 1 100%;
         max-width: none;
-        justify-content: flex-start;   /* در RTL: سمت راست */
-        flex-wrap: wrap;
+        display: flex;
+        gap: var(--space-2);
+        grid-template-columns: auto auto;
+        justify-content: flex-start;
     }
 
-    .add-form__select { flex: 1 1 100%; width: auto; }
-    .date-field       { flex: 0 0 auto; }
-    .add-form__btn    { flex: 0 0 var(--control-h); }
+    .add-form__select { flex: 1 1 100%; width: auto; grid-column: 1 / -1;}
+    .date-field       {position: relative; right: 5pc; grid-column: 1;  flex: 0 0 auto; }
+    .add-form__btn    {grid-column: 2; flex: 0 0 var(--control-h); }
 
     .add-form.is-search .add-form__extras {
         flex-basis: 0;
         height: 0;
         margin: 0;
+        overflow: hidden;
     }
 }
