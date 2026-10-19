@@ -73,15 +73,3 @@ GitHub: [@YOUR-USERNAME](https://github.com/1887-mehdi)
 ⭐ If you like this project, give it a star!
 </div>
 ````
-````
-
-**کارهایی که باید بکنی:**
-
-1. `YOUR-USERNAME` و `Your Name` رو با اسم خودت عوض کن.
-2. از برنامه‌ت یه اسکرین‌شات بگیر، اسمش رو `screenshot.png` بذار و توی پوشه پروژه کنار `index.html` بذارش. اسکرین‌شات بیشترین تأثیر رو توی ظاهر README داره.
-3. بخش **Project Structure** و **Features** رو با چیزی که واقعاً توی پروژه‌ته مطابقت بده. مثلاً اگه قابلیت تیک‌زدن تسک نداری، پاکش کن.
-4. اگه پروژه رو با GitHub Pages منتشر کردی، آدرسش رو جای `#` توی Live Demo بذار.
-
-**بعد توی GitHub Desktop:** فایل‌ها رو کامیت کن (مثلاً `Add README`) و `Push origin` بزن.
-
-اگه خواستی، فارسیش کنم یا بر اساس ویژگی‌های واقعی TodoAppت دقیق‌ترش کنم، بگو چه امکاناتی داره.
