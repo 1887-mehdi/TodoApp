@@ -64,7 +64,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👤 Author
 
-**Your Name**
 GitHub: [1887-mehdi](https://github.com/1887-mehdi)
 
 ---
@@ -72,4 +71,4 @@ GitHub: [1887-mehdi](https://github.com/1887-mehdi)
 <div align="center">
 ⭐ If you like this project, give it a star!
 </div>
-````
+
