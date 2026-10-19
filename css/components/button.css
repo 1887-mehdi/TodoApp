@@ -28,7 +28,7 @@
     font-size: var(--fs-sm);
 }
 
-/* آیکون داخل دکمه: هم‌تراز با متن */
+/* Icon inside button: center-aligned with text */
 .app-btn > span {
     display: inline-flex;
     align-items: center;
@@ -79,7 +79,7 @@
     background: var(--danger-soft);
 }
 
-/* ---------- دکمه‌ی آیکونی ---------- */
+/* ---------- Icon button ---------- */
 .icon-btn {
     display: grid;
     place-items: center;
@@ -105,7 +105,7 @@
     cursor: not-allowed;
 }
 
-/* ---------- دکمه‌ی تم ---------- */
+/* ---------- Theme button ---------- */
 .theme-toggle {
     display: grid;
     place-items: center;

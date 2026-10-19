@@ -1,4 +1,4 @@
-/* ---------- پوسته ---------- */
+/* ---------- Theme ---------- */
 .edit-modal {
     --bs-modal-bg: var(--surface);
     --bs-modal-color: var(--text);
@@ -17,7 +17,7 @@
     overflow: hidden;
 }
 
-/* بک‌دراپ تیره و بلور */
+/* Dark and blurred backdrop */
 .modal-backdrop {
     --bs-backdrop-bg: #0f1020;
     --bs-backdrop-opacity: .55;
@@ -28,7 +28,7 @@
     -webkit-backdrop-filter: blur(4px);
 }
 
-/* انیمیشن نرم ورود */
+/* Smooth entry animation */
 .edit-modal.fade .modal-dialog {
     transform: translateY(16px) scale(.97);
     transition: transform .25s cubic-bezier(.2, .8, .2, 1);
@@ -38,7 +38,7 @@
     transform: none;
 }
 
-/* ---------- هدر ---------- */
+/* ---------- Header ---------- */
 .edit-modal .modal-header {
     align-items: center;
     gap: var(--space-4);
@@ -70,7 +70,7 @@
     box-shadow: 0 6px 16px rgba(99, 102, 241, .35);
 }
 
-/* دکمه‌ی بستن: در تم تیره هم دیده بشه */
+/* Close button: Ensure it remains visible in the dark theme */
 .edit-modal .btn-close {
     flex-shrink: 0;
     margin: 0;
@@ -94,7 +94,7 @@ body.dark .edit-modal input[type="date"] {
     color-scheme: dark;
 }
 
-/* ---------- بدنه ---------- */
+/* ---------- Body ---------- */
 .edit-modal .modal-body {
     padding: var(--space-5);
 }
@@ -143,7 +143,7 @@ body.dark .edit-modal input[type="date"] {
     resize: vertical;
 }
 
-/* فلش select (فاصله از لبه‌ی چپ، مثل فرم افزودن) */
+/* Select arrow (distance from the left edge, similar to the 'add' form) */
 .edit-modal .form-select {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236f769c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-position: left 14px center;
@@ -157,7 +157,7 @@ body.dark .edit-modal input[type="date"] {
     background-color: var(--surface);
 }
 
-/* خطا و شمارنده */
+/* Error and counter */
 .edit-modal .form-control.is-invalid {
     border-color: var(--danger);
     background-image: none;
@@ -174,7 +174,7 @@ body.dark .edit-modal input[type="date"] {
     color: var(--muted);
 }
 
-/* ---------- فوتر ---------- */
+/* ---------- Footer ---------- */
 .edit-modal .modal-footer {
     gap: var(--space-2);
     padding: var(--space-4) var(--space-5);
@@ -225,7 +225,7 @@ body.dark .edit-modal input[type="date"] {
     --bs-btn-active-border-color: var(--primary);
 }
 
-/* ---------- موبایل ---------- */
+/* ---------- Mobile ---------- */
 @media (max-width: 560px) {
     .edit-modal .modal-header,
     .edit-modal .modal-body,

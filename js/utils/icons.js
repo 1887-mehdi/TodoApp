@@ -20,7 +20,7 @@ export function icon(name, size = 20) {
     return `<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[name] ?? ''}</svg>`;
 }
 
-// المان‌هایی که در HTML با data-icon مشخص شدن را پر می‌کند
+// Populates elements in HTML that are marked with data-icon
 export function renderStaticIcons(root = document) {
     root.querySelectorAll('[data-icon]').forEach((el) => {
         el.innerHTML = icon(el.dataset.icon, Number(el.dataset.size) || 20);

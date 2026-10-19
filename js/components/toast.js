@@ -1,8 +1,8 @@
 import { toasts } from '../core/dom.js';
 import { icon } from '../utils/icons.js';
 
-const MAX_VISIBLE = 1;      // حداکثر پیام همزمان
-const DURATION = 3000;      // مدت همه‌ی پیام‌ها (میلی‌ثانیه)
+const MAX_VISIBLE = 1;      // Maximum concurrent messages
+const DURATION = 3000;      // Duration of all messages (milliseconds)
 
 const ICONS = {
     success: 'circle-check',
@@ -27,14 +27,14 @@ function mount(message, type, { action = null } = {}) {
     el.setAttribute('role', 'status');
     el.style.setProperty('--toast-duration', `${DURATION}ms`);
 
-    // محتوای پیام
+    // Message content
     const row = document.createElement('div');
     row.className = 'app-toast__row';
     row.innerHTML = icon(ICONS[type] ?? ICONS.info, 20);
 
     const text = document.createElement('span');
     text.className = 'app-toast__text';
-    text.textContent = message; // textContent => امن در برابر XSS
+    text.textContent = message; // textContent => Safe against XSS
     row.appendChild(text);
 
     let closed = false;
@@ -45,7 +45,7 @@ function mount(message, type, { action = null } = {}) {
         el.addEventListener('animationend', () => {
             el.remove();
             visible--;
-            pump();               // نفر بعدی صف
+            pump();              // Next person in line
         }, { once: true });
     };
 
@@ -61,7 +61,7 @@ function mount(message, type, { action = null } = {}) {
         row.appendChild(btn);
     }
 
-    // نوار شمارش معکوس
+    // Countdown bar
     const bar = document.createElement('div');
     bar.className = 'app-toast__bar';
     const fill = document.createElement('div');
@@ -71,12 +71,12 @@ function mount(message, type, { action = null } = {}) {
     el.append(row, bar);
     toasts.appendChild(el);
 
-    // پایان انیمیشن نوار = بسته شدن پیام (با hover متوقف می‌شه)
+    // End of strip animation = message closes (pauses on hover)
     fill.addEventListener('animationend', dismiss, { once: true });
 }
 
 /**
- * options.action = { label, onClick }  → دکمه‌ی داخل پیام (مثل «بازگردانی»)
+ * options.action = { label, onClick }  → A button inside the message (e.g., "Restore")
  */
 export function showToast(message, type = 'success', options = {}) {
     queue.push({ message, type, options });

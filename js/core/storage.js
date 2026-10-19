@@ -10,7 +10,7 @@ export function load(key, fallback) {
     try {
         return JSON.parse(raw);
     } catch {
-        return raw; // مقدارهای قدیمی که JSON نیستند (مثل dark)
+        return raw; // Legacy values ​​that are not JSON (e.g., dark)
     }
 }
 
@@ -18,6 +18,6 @@ export function save(key, value) {
     try {
         localStorage.setItem(key, JSON.stringify(value));
     } catch {
-        /* حافظه پر یا غیرفعال است */
+        /* Storage is full or disabled */
     }
 }

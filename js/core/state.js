@@ -5,7 +5,7 @@ const makeId = () =>
     globalThis.crypto?.randomUUID?.() ??
     `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-// داده‌های قدیمی (بدون id و description) را به ساختار جدید تبدیل می‌کند
+// Converts legacy data (lacking an ID and description) into the new structure
 function normalize(list) {
     if (!Array.isArray(list)) return [];
     return list
@@ -102,8 +102,8 @@ export function updateTodo(id, changes) {
 }
 
 /**
- * تسک fromId را کنار تسک targetId می‌گذارد.
- * position: 'before' (قبل از مقصد) یا 'after' (بعد از مقصد)
+ * Places the task with `fromId` next to the task with `targetId`.
+ * position: 'before' (before the target) or 'after' (after the target)
  */
 export function moveTodo(fromId, targetId, position = 'before') {
     if (fromId === targetId) return;
@@ -115,7 +115,7 @@ export function moveTodo(fromId, targetId, position = 'before') {
 
     const target = state.todos.findIndex((t) => t.id === targetId);
     if (target === -1) {
-        state.todos.splice(from, 0, item); // مقصد پیدا نشد؛ برگردان سر جاش
+        state.todos.splice(from, 0, item); // Target not found; return to original position
         return;
     }
 
@@ -123,7 +123,7 @@ export function moveTodo(fromId, targetId, position = 'before') {
     persist();
 }
 
-/** تسک را به اول یا آخر کل لیست می‌برد. */
+/** Places the task with `fromId` at the beginning or end of the list. */
 export function moveTodoToEdge(fromId, edge = 'end') {
     const from = state.todos.findIndex((t) => t.id === fromId);
     if (from === -1) return;

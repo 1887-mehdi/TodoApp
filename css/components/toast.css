@@ -69,7 +69,7 @@
     background: var(--primary);
 }
 
-/* ---------- نوار شمارش معکوس ---------- */
+/* ---------- Countdown Bar ---------- */
 .app-toast__bar {
     height: 3px;
     background: color-mix(in srgb, var(--tc) 18%, transparent);
@@ -78,11 +78,11 @@
 .app-toast__bar-fill {
     height: 100%;
     background: var(--tc);
-    transform-origin: right;           /* RTL: از راست خالی می‌شه */
+    transform-origin: right;           
     animation: toast-countdown var(--toast-duration) linear forwards;
 }
 
-/* با نگه داشتن موس، شمارش متوقف می‌شه */
+/* Holding the mouse pauses the counting */
 .app-toast:hover .app-toast__bar-fill {
     animation-play-state: paused;
 }

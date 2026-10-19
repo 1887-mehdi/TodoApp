@@ -106,7 +106,7 @@ button.jdp__cell:hover { background: var(--primary-soft); color: var(--primary);
 .jdp__link:hover { background: var(--primary-soft); }
 .jdp__link--muted { color: var(--muted); }
 
-/* دکمه‌ی تاریخ در مودال ویرایش */
+/* Date button in the edit modal */
 .edit-date-btn {
     display: flex;
     align-items: center;

@@ -14,11 +14,11 @@ import { initTheme } from './utils/theme.js';
 import { initDragDrop } from './components/dragDrop.js';
 import { initDateField, resetDateField } from './components/dateField.js';
 import { todayISO } from './utils/date.js';
-// متن‌های طولانی را برای پیام کوتاه می‌کند
+// Shortens long texts for messaging
 const short = (text, max = 28) =>
     text.length > max ? `${text.slice(0, max)}…` : text;
 
-// ---------- عملیات هر آیتم ----------
+// ---------- Operations for each item ----------
 const handlers = {
     onToggle(id, completed) {
         updateTodo(id, { completed });
@@ -92,7 +92,7 @@ function render() {
     renderApp(handlers);
 }
 
-// ---------- افزودن ----------
+// ---------- Add ----------
 function syncAddButton() {
     addBtn.disabled = searchMode || todoInput.value.trim() === '';
 }
@@ -122,8 +122,8 @@ addForm.addEventListener('submit', (e) => {
     showToast(`تسک «${short(title)}» اضافه شد.`, 'success');
 });
 
-// ---------- جستجو ----------
-// ---------- حالت افزودن / جستجو (یک input برای هر دو) ----------
+
+// ---------- Search ----------
 const PLACEHOLDER_ADD = 'یک تسک جدید بنویس...';
 const PLACEHOLDER_SEARCH = 'جستجو در تسک‌ها...';
 let searchMode = false;
@@ -132,14 +132,14 @@ function setSearchMode(on) {
     searchMode = on;
 
     addForm.classList.toggle('is-search', on);
-    addExtras.inert = on;                       // در حالت جستجو فوکوس‌پذیر نیست
+    addExtras.inert = on;                       // Not focusable in search mode
     modeBtn.setAttribute('aria-pressed', String(on));
     modeBtn.title = on ? 'بستن جستجو' : 'جستجو در تسک‌ها';
     modeBtn.setAttribute('aria-label', modeBtn.title);
     todoInput.placeholder = on ? PLACEHOLDER_SEARCH : PLACEHOLDER_ADD;
     todoInput.maxLength = on ? 200 : 100;
 
-    // متن تایپ‌شده را جابه‌جا نمی‌کنیم؛ هر حالت فقط با ورودی خودش کار می‌کنه
+    // We do not move the typed text; each state works only with its own input.
     todoInput.value = '';
     setSearch('');
     syncAddButton();
@@ -152,14 +152,14 @@ modeBtn.addEventListener('click', () => setSearchMode(!searchMode));
 todoInput.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && searchMode) setSearchMode(false);
 });
-// کلیک یا لمس بیرون از فرم، حالت جستجو را می‌بندد
+// Clicking or touching outside the form closes the search mode.
 document.addEventListener('pointerdown', (e) => {
     if (!searchMode) return;
-    if (addForm.contains(e.target)) return;   // داخل فرم (شامل ذره‌بین/ضربدر) نباشه
+    if (addForm.contains(e.target)) return;   // Should not be inside the form (including the magnifying glass/cross icon)
     setSearchMode(false);
 });
 
-// ---------- فیلتر ----------
+// ---------- Filter ----------
 filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
         setFilter(btn.dataset.filter);
@@ -167,7 +167,7 @@ filterBtns.forEach((btn) => {
     });
 });
 
-// ---------- پاک کردن همه ----------
+// ---------- Clear All ----------
 clearBtn.addEventListener('click', () => {
     openConfirmModal(
         {
@@ -192,7 +192,7 @@ clearBtn.addEventListener('click', () => {
     );
 });
 
-// ---------- شروع ----------
+// ---------- Start ----------
 renderStaticIcons();
 initTheme();
 syncAddButton();
@@ -200,7 +200,7 @@ initDragDrop(handlers);
 initDateField();
 render();
 
-// ---------- پایان لودینگ ----------
+// ---------- Loading Complete ----------
 const pageLoader = document.getElementById('pageLoader');
 
 const hideLoader = () => {
@@ -209,7 +209,7 @@ const hideLoader = () => {
     pageLoader.addEventListener('transitionend', () => pageLoader.remove(), { once: true });
 };
 
-// منتظر فونت‌ها می‌مونیم، ولی حداکثر ۱.۵ ثانیه
+// We’ll wait for the fonts, but for a maximum of 1.5 seconds.
 Promise.race([
     document.fonts?.ready ?? Promise.resolve(),
     new Promise((resolve) => setTimeout(resolve, 1500)),

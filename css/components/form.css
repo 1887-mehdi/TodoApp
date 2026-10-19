@@ -1,11 +1,11 @@
-/* ---------- کنترل مشترک (input / select / textarea) ---------- */
+/* ---------- Common control (input / select / textarea) ---------- */
 .control {
     width: 100%;
     height: var(--control-h);
     padding: 0 var(--space-4);
     border: 1.5px solid var(--border);
     border-radius: var(--radius-md);
-    background-color: var(--surface);   /* ← قبلاً background بود */
+    background-color: var(--surface);   
     font-size: var(--fs-md);
     transition: border-color .2s, box-shadow .2s;
 }
@@ -21,7 +21,7 @@
 .control:focus {
     outline: none;
     border-color: var(--primary);
-    background-color: var(--surface);   /* ← قبلاً background بود */
+    background-color: var(--surface);   
     box-shadow: 0 0 0 4px var(--primary-soft);
 }
 
@@ -29,20 +29,18 @@
     border-color: var(--danger);
 }
 
-/* ---------- select با فلش سفارشی ---------- */
+/* ---------- Select with custom arrow ---------- */
 select.control {
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
     font-weight: 500;
 
-    /* فلش: ۱۴ پیکسل از لبه (در RTL سمت چپ) فاصله دارد */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236f769c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: left 14px center;
     background-size: 16px;
 
-    /* جا برای فلش، تا متن روی آن نیفتد */
     padding-left: 40px;
 }
 
@@ -52,7 +50,7 @@ select.control:focus {
 
 select.control option {
     color: var(--text);
-    background-color: var(--surface);   /* ← برای یکدستی */
+    background-color: var(--surface);   /* For consistency */
 }
 
 textarea.control {
@@ -63,7 +61,7 @@ textarea.control {
     resize: vertical;
 }
 
-/* ---------- فرم افزودن ---------- */
+/* ---------- Add form ---------- */
 .add-form {
     display: flex;
     gap: var(--space-2);
@@ -102,7 +100,7 @@ textarea.control {
     box-shadow: 0 0 0 4px var(--primary-soft);
 }
 
-/* داخل کارت فرم، خود فیلدها بدون حاشیه‌ی اضافه */
+/* Inside the form card, the fields themselves without extra margins */
 .add-form .control {
     background-color: var(--surface);
     border-color: transparent;
@@ -128,8 +126,7 @@ textarea.control {
     flex-shrink: 0;
 }
 
-/* ---------- فیلد تاریخ ---------- */
-/* ---------- فیلد تاریخ (دکمه‌ی آیکونی) ---------- */
+/* ---------- Date field ---------- */
 .date-field {
     position: relative;
     display: flex;
@@ -162,7 +159,7 @@ textarea.control {
 
 .date-field__btn .icon { display: block; }
 
-/* وقتی تاریخ انتخاب شده: متن هم دیده می‌شه */
+/* When a date is selected, the text also becomes visible */
 .date-field.has-value .date-field__btn {
     padding-inline: 14px 34px;
     color: var(--primary);
@@ -188,7 +185,6 @@ textarea.control {
 .date-field__clear[hidden] { display: none; }
 .date-field__clear:hover { background: var(--primary-soft); }
 
-/* input واقعی نامرئی است ولی تقویم از زیر دکمه باز می‌شود */
 .date-field__input {
     position: absolute;
     inset: 0;
@@ -201,8 +197,7 @@ textarea.control {
 
 body.dark .date-field__input { color-scheme: dark; }
 
-/* ---------- جستجو ---------- */
-/* ---------- حالت افزودن / جستجو ---------- */
+/* ---------- Add / Search mode ---------- */
 .add-form__mode {
     position: relative;
     display: grid;
@@ -232,7 +227,7 @@ body.dark .date-field__input { color-scheme: dark; }
     transform: rotate(-90deg) scale(.5);
 }
 
-/* گروه اولویت / تاریخ / + */
+/* Priority Group / Date / + */
 .add-form__extras {
     display: flex;
     gap: var(--space-2);
@@ -242,7 +237,7 @@ body.dark .date-field__input { color-scheme: dark; }
                 opacity .25s, transform .35s;
 }
 
-/* ---- حالت جستجو ---- */
+/* ---- Search mode ---- */
 .add-form.is-search {
     border-color: var(--primary);
     box-shadow: 0 0 0 4px var(--primary-soft);
@@ -271,7 +266,7 @@ body.dark .date-field__input { color-scheme: dark; }
     gap: 0;
 }
 
-/* ورودی با هاله‌ی کوتاه می‌گه «اینجا تایپ کن» */
+/* Input field with a subtle glow, saying "Type here" */
 .add-form.is-search .add-form__input {
     animation: search-pulse .6s ease-out;
 }
@@ -281,7 +276,7 @@ body.dark .date-field__input { color-scheme: dark; }
     100% { box-shadow: 0 0 0 10px transparent; }
 }
 
-/* ---------- فیلد داخل مودال ---------- */
+/* ---------- Field inside the modal ---------- */
 .field {
     display: flex;
     flex-direction: column;

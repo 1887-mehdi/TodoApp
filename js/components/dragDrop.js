@@ -1,7 +1,7 @@
 import { todoList } from '../core/dom.js';
 
-const SCROLL_ZONE = 48;   // فاصله از لبه که اسکرول خودکار شروع می‌شه (px)
-const SCROLL_SPEED = 14;  // سرعت اسکرول (px در هر فریم)
+const SCROLL_ZONE = 48;   // Distance from the edge at which auto-scroll begins (px)
+const SCROLL_SPEED = 14;  // Scroll speed (px per frame)
 
 let dragId = null;
 let handlers = null;
@@ -11,7 +11,7 @@ let rafId = null;
 
 const area = () => todoList.closest('.list-area');
 
-// ---------- خط نشان‌دهنده‌ی جای رها کردن ----------
+// ---------- Line indicating the drop position ----------
 function clearIndicators() {
     todoList
         .querySelectorAll('.drop-before, .drop-after')
@@ -33,7 +33,7 @@ function showIndicator(target) {
     }
 }
 
-// ---------- پیدا کردن مقصد بر اساس مکان موس ----------
+// ---------- Finding the destination based on the mouse location ----------
 function resolveTarget(y) {
     const items = [...todoList.querySelectorAll('.todo-item:not(.is-dragging)')];
     if (items.length === 0) return null;
@@ -44,11 +44,11 @@ function resolveTarget(y) {
             return { id: el.dataset.id, position: 'before' };
         }
     }
-    // پایین‌تر از نیمه‌ی همه‌ی آیتم‌ها
+    // Below the midpoint of all items
     return { id: items[items.length - 1].dataset.id, position: 'after' };
 }
 
-// ---------- اسکرول خودکار نزدیک لبه‌ها ----------
+// ---------- Auto-scroll near the edges ----------
 function tickScroll() {
     const el = area();
     if (el && scrollDir !== 0) {
@@ -73,7 +73,7 @@ function updateAutoScroll(y) {
     }
 }
 
-// ---------- پایان درگ ----------
+// ---------- End of Drag ----------
 function finish() {
     dragId = null;
     dropTarget = null;
@@ -85,7 +85,7 @@ function finish() {
     todoList.classList.remove('is-sorting');
 }
 
-// ---------- API برای todoItem.js ----------
+// ---------- API for todoItem.js ----------
 export function bindDragSource(li, id) {
     li.draggable = true;
 
@@ -100,13 +100,13 @@ export function bindDragSource(li, id) {
         li.addEventListener('dragend', () => setTimeout(finish, 0));
 }
 
-// ---------- یک بار روی کل ناحیه‌ی لیست ----------
+// ---------- Once over the entire list area ----------
 export function initDragDrop(itemHandlers) {
     handlers = itemHandlers;
     const zone = area();
     if (!zone) return;
 
-    // کل ناحیه (حتی فضای خالی بالا و پایین) دراپ‌پذیره
+    // The entire area (including the empty space above and below) is a drop zone.
         zone.addEventListener('dragover', (e) => {
         e.preventDefault();
         e.dataTransfer.dropEffect = 'move';
@@ -117,7 +117,7 @@ export function initDragDrop(itemHandlers) {
     });
 
     zone.addEventListener('dragleave', (e) => {
-        // فقط وقتی واقعاً از کل ناحیه بیرون رفت
+        // Only when it has truly moved out of the entire area
         if (!zone.contains(e.relatedTarget)) {
             clearIndicators();
             scrollDir = 0;

@@ -21,12 +21,12 @@ export function createTodoItem(task, { isNew, handlers }) {
     li.classList.toggle('is-completed', task.completed);
     li.classList.toggle('is-new', isNew);
 
-    // دستگیره
+    // Drag handle
     const grip = document.createElement('span');
     grip.className = 'todo-item__grip';
     grip.innerHTML = icon('grip', 18);
 
-    // چک‌باکس
+    // Checkbox
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.className = 'todo-item__check';
@@ -35,8 +35,7 @@ export function createTodoItem(task, { isNew, handlers }) {
     checkBox.addEventListener('change', () =>
         handlers.onToggle(task.id, checkBox.checked));
 
-    // عنوان و توضیحات
-        // عنوان و توضیحات
+    // Title and description
     const content = document.createElement('div');
     content.className = 'todo-item__content';
 
@@ -52,7 +51,7 @@ export function createTodoItem(task, { isNew, handlers }) {
         content.appendChild(desc);
     }
 
-    // عملیات
+    // Operations
     const actions = document.createElement('div');
     actions.className = 'todo-item__actions';
 
@@ -92,7 +91,7 @@ export function createTodoItem(task, { isNew, handlers }) {
     }
 
     actions.append(editBtn, deleteBtn);
-    // درگ و دراپ
+    // Drag and drop
     bindDragSource(li, task.id);
     li.append(grip, checkBox, content, actions);
     if (task.createdAt) {

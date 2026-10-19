@@ -1,6 +1,6 @@
 const DAY = 24 * 60 * 60 * 1000;
 
-// "2026-10-18" → Date در ساعت ۰۰:۰۰ محلی
+// "2026-10-18" → Date at 00:00 local time
 function parse(iso) {
     const [y, m, d] = iso.split('-').map(Number);
     return new Date(y, m - 1, d);
@@ -11,7 +11,7 @@ function today() {
     return new Date(now.getFullYear(), now.getMonth(), now.getDate());
 }
 
-// تعداد روز تا سررسید (منفی = گذشته)
+// Number of days until due date (negative = past)
 export function daysUntil(iso) {
     return Math.round((parse(iso) - today()) / DAY);
 }
@@ -39,7 +39,7 @@ export function formatDue(iso) {
     return (sameYear ? faDate : faDateYear).format(date);
 }
 
-// وضعیت برای رنگ‌دهی: overdue | today | soon | later
+// Status for coloring: overdue | today | soon | later
 export function dueStatus(iso) {
     const diff = daysUntil(iso);
     if (diff < 0) return 'overdue';
@@ -48,7 +48,7 @@ export function dueStatus(iso) {
     return 'later';
 }
 
-// تاریخ امروز برای min و مقدار پیش‌فرض input (در صورت نیاز)
+// Today's date for the 'min' attribute and the default value of the input (if needed)
 export function todayISO() {
     const t = today();
     const mm = String(t.getMonth() + 1).padStart(2, '0');
@@ -62,7 +62,7 @@ const faFull = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
     year: 'numeric',
 });
 
-// timestamp → «۲۷ مهر ۱۴۰۵» (یا «امروز» اگر همین امروز بود)
+// timestamp → "27 Mehr 1405" (or "Today" if it were actually today)
 export function formatCreated(ts) {
     const d = new Date(ts);
     const day = new Date(d.getFullYear(), d.getMonth(), d.getDate());

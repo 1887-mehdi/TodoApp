@@ -17,7 +17,7 @@ function build() {
     pop.hidden = true;
     document.body.appendChild(pop);
 
-    // کلیک بیرون از تقویم و بیرون از دکمه‌ی بازکننده، تقویم را می‌بندد
+    // Clicking outside the calendar and outside the opening button closes the calendar.
     document.addEventListener('click', (e) => {
         if (!current) return;
         if (pop.contains(e.target)) return;
@@ -38,8 +38,8 @@ export function prepareDatePicker() {
 
 function weekdayOfFirst(jy, jm) {
     const { gy, gm, gd } = toGregorian(jy, jm, 1);
-    const day = new Date(gy, gm - 1, gd).getDay();   // 0=یکشنبه
-    return (day + 1) % 7;                            // 0=شنبه
+    const day = new Date(gy, gm - 1, gd).getDay();   // 0=Sunday
+    return (day + 1) % 7;                            // 0=Saturday
 }
 
 function render() {

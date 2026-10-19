@@ -11,7 +11,7 @@ body {
     color: var(--text);
 }
 
-/* همه‌ی کنترل‌ها همان فونت صفحه را بگیرند */
+/* All controls inherit the page's font */
 button, input, select, textarea {
     font: inherit;
     color: inherit;

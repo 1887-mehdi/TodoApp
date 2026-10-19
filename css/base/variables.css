@@ -1,7 +1,7 @@
 :root {
     --font: 'Vazirmatn', Tahoma, sans-serif;
 
-    /* رنگ‌ها */
+    /* Colors */
     --bg: #eef0ff;
     --card: rgba(255, 255, 255, .85);
     --surface: #ffffff;
@@ -22,11 +22,11 @@
     --danger: #ef4444;
     --danger-soft: rgba(239, 68, 68, .12);
 
-    /* سایزهای یکدست */
-    --control-h: 46px;     /* input / select / button اصلی */
-    --btn-sm-h: 38px;      /* دکمه‌های کوچک */
-    --icon-btn: 38px;      /* دکمه‌های آیکونی */
-    --badge-h: 32px;       /* بج اولویت */
+    /* Uniform sizes */
+    --control-h: 46px;    /* Main input / select / button */
+    --btn-sm-h: 38px;      /* Small buttons */
+    --icon-btn: 38px;      /* Icon buttons */
+    --badge-h: 32px;       /* Priority badges */
 
     --fs-sm: 13px;
     --fs-md: 15px;

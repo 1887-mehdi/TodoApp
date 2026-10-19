@@ -12,7 +12,7 @@ const editModal = bootstrap.Modal.getOrCreateInstance(editModalEl);
 let onSaveCallback = null;
 let onConfirmCallback = null;
 
-// کلیک روی بک‌دراپ مودال را می‌بندد (فقط برای مودال تأیید که هنوز <dialog> است)
+// Clicking on the backdrop of the modal closes it (only for the confirm modal which is still a <dialog>)
 function closeOnBackdrop(dialog) {
     dialog.addEventListener('click', (e) => {
         if (e.target === dialog) dialog.close();
@@ -24,7 +24,7 @@ function clearError() {
     editTitle.classList.remove('is-invalid');
 }
 
-// ---------- مودال ویرایش (Bootstrap) ----------
+// ---------- Edit Modal (Bootstrap) ----------
 const toFa = (n) => n.toLocaleString('fa-IR');
 const MAX_DESC = 300;
 
@@ -58,7 +58,7 @@ export function openEditModal(todo, onSave) {
     editTitle.value = todo.title;
     editDescription.value = todo.description;
     editPriority.value = todo.priority;
-    editDue.value = todo.dueDate || '';      // ← جدید
+    editDue.value = todo.dueDate || '';      
     clearError();
     updateCounter();
     syncEditDue();
@@ -88,11 +88,11 @@ editForm.addEventListener('submit', (e) => {
 editTitle.addEventListener('input', clearError);
 editDescription.addEventListener('input', updateCounter);
 
-// فوکوس روی عنوان بعد از تمام شدن انیمیشن باز شدن
+// Focus on the title after the modal is fully opened
 editModalEl.addEventListener('shown.bs.modal', () => editTitle.focus());
 editModalEl.addEventListener('hidden.bs.modal', () => { onSaveCallback = null; });
 
-// ---------- مودال تأیید ----------
+// ---------- Confirm Modal ----------
 export function openConfirmModal({ title, message, confirmText = 'تأیید' }, onConfirm) {
     onConfirmCallback = onConfirm;
 

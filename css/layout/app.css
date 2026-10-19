@@ -15,37 +15,37 @@ body {
 
 .app {
     width: 100%;
-    max-width: 100%;          /* موبایل: کل عرض */
+    max-width: 100%;          /* Mobile: Full width */
 }
 
-/* تبلت */
+/* Tablet */
 @media (min-width: 768px) {
     .app { max-width: 720px; }
 }
 
-/* لپ‌تاپ */
+/* Laptop */
 @media (min-width: 1024px) {
     .app { max-width: 860px; }
 }
 
-/* دسکتاپ */
+/* Desktop */
 @media (min-width: 1440px) {
     .app { max-width: 1000px; }
 }
 
-/* مانیتور خیلی بزرگ */
+/* Large Monitor */
 @media (min-width: 1920px) {
     .app { max-width: 1160px; }
 }
 
-/* کانتینر: خودش پوسته ندارد، فقط هدر و بدنه را با فاصله زیر هم می‌چیند */
+/* Container: It doesn't have its own border, only places the header and body with spacing */
 .app-card {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 }
 
-/* ---------- هدر ---------- */
+/* ---------- Header ---------- */
 .app-header {
     display: flex;
     flex-direction: column;
@@ -95,7 +95,7 @@ body {
     color: var(--muted);
 }
 
-/* ---------- بدنه ---------- */
+/* ---------- Body ---------- */
 .app-body {
     display: flex;
     flex-direction: column;
@@ -111,7 +111,7 @@ body {
     transition: background .3s, border-color .3s;
 }
 
-/* فاصله‌ی آیتم‌ها از هدر و فوتر + اسکرول داخلی */
+/* ---------- List Area ---------- */
 .list-area {
     min-height: 140px;
     max-height: min(360px, 50vh);
@@ -120,7 +120,7 @@ body {
     padding: var(--space-2);
 }
 
-/* ---------- فوتر ---------- */
+/* ---------- Footer ---------- */
 .app-footer {
     display: flex;
     justify-content: space-between;
@@ -144,7 +144,7 @@ body {
     color: var(--muted);
 }
 
-/* ---------- ریسپانسیو ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 560px) {
     body {
         padding: var(--space-3);
